@@ -2,7 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const pino = require("express-pino-logger")();
 const fetch = require("node-fetch");
-const APIKEY = require("./config");
+const APIKEY = require("../src/config");
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));

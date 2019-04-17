@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import CardMain from "./components/cardMain/cardMain";
 import "./App.css";
 
 class App extends Component {
@@ -19,10 +20,9 @@ class App extends Component {
   render() {
     return (
       <div>
-        {this.state.data.map(d => (
-          <div>Beer Name: {d.name}</div>
+        {this.state.data.map(data => (
+          <CardMain data={data} />
         ))}
-        {/* {this.state.data} */}
       </div>
     );
   }

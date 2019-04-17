@@ -1,4 +1,18 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
 .card {
   display: flex;
   flex-direction: column;
+  border: 1px black;
+  border-right-style: solid;
+  border-left-style: solid;
+  padding: 2em;
+}
+.imgWidth {
+  width: 256px;
+}
+.img {
+  align-self: center;
 }

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Switch, Route } from "react-router-dom";
 import Home from "./components/home/home";
 import BeerDetails from "./components/beerDetails/beerDetails";
+import CardDetails from "./components/cardDetails/cardDetails";
 import "./App.css";
 
 class App extends Component {
@@ -24,8 +25,13 @@ class App extends Component {
     return (
       <Switch>
         <Route exact path="/" render={() => <Home data={data} />} />
+        {/* <Route
+          exact
+          path="/details"
+          render={() => <BeerDetails data={data} />}
+        /> */}
         <Route
-          path="/beer/:name"
+          path="/beer/:id"
           render={props => <BeerDetails {...props} data={data} />}
         />
         {/* <Route path="*" exact={true} component={NotFound} /> */}

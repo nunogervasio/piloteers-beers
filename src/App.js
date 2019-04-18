@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import CardMain from "./components/cardMain/cardMain";
+import { Switch, Route } from "react-router-dom";
+import Home from "./components/home/home";
+import BeerDetails from "./components/beerDetails/beerDetails";
 import "./App.css";
 
 class App extends Component {
@@ -18,14 +20,24 @@ class App extends Component {
   }
 
   render() {
+    const { data } = this.state;
     return (
-      <div>
-        {this.state.data.map(data => (
-          <CardMain data={data} />
-        ))}
-      </div>
+      <Switch>
+        <Route exact path="/" render={() => <Home data={data} />} />
+        <Route
+          path="/beer/:name"
+          render={props => <BeerDetails {...props} data={data} />}
+        />
+        {/* <Route path="*" exact={true} component={NotFound} /> */}
+      </Switch>
     );
   }
 }
 
 export default App;
+
+// <div>
+// {this.state.data.map(data => (
+//   <CardDetails data={data} />
+// ))}
+// </div>

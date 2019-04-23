@@ -1,12 +1,18 @@
 import React from "react";
 import CardMain from "../cardMain/cardMain";
-import styles from "./home.module.css";
 
 const Home = ({ data }) => {
+  const styles = {
+    container: {
+      display: "flex",
+      flexWrap: "wrap",
+      justifyContent: "center"
+    }
+  };
   return (
-    <div className={styles.container}>
+    <div style={styles.container}>
       {data.map(data => (
-        <CardMain data={data} />
+        <CardMain key={data.id} data={data} />
       ))}
     </div>
   );

@@ -1,10 +1,19 @@
 import React from "react";
-import styles from "./cardImage.module.css";
 
 const CardImage = ({ value }) => {
+  const styles = {
+    container: {
+      display: "flex",
+      justifyContent: "center"
+    },
+    img: {
+      alignSelf: "center",
+      width: "256px"
+    }
+  };
   return (
-    <div className={styles.container}>
-      <img src={value} className={styles.img} />
+    <div style={styles.container}>
+      <img src={value} style={styles.img} alt="beer label" />
     </div>
   );
 };

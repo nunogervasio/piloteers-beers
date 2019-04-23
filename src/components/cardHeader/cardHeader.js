@@ -1,13 +1,17 @@
 import React from "react";
-import styles from "./cardHeader.module.css";
 
-const CardHeader = ({ data }) => {
+const CardHeader = ({ header }) => {
+  const styles = {
+    header: {
+      display: "flex",
+      justifyContent: "center"
+    }
+  };
+
   return (
-    <React.Fragment>
-      <div className={styles.container}>
-        <h2>{data.name}</h2>
-      </div>
-    </React.Fragment>
+    <div>
+      <h2 style={styles.header}>{header}</h2>
+    </div>
   );
 };
 

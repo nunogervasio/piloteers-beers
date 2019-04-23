@@ -1,24 +1,28 @@
 import React from "react";
 import CardDetails from "../cardDetails/cardDetails";
-import styles from "./beerDetails.module.css";
 
 const BeerDetails = ({ data, match }) => {
-  console.log("data is: ", data);
+  const styles = {
+    container: {
+      padding: "10px",
+      borderRadius: "5px",
+      margin: "45px auto",
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center"
+    }
+  };
   let id = match.params.id;
-  console.log("match id is: ", id);
-  console.log("data is: ", data);
 
   let selectedBeer = data.filter(d => {
-    return d.id === id; //TEST
+    return d.id === id;
   });
 
-  console.log("selectedbeer is: ", JSON.stringify(selectedBeer));
   return (
-    <div className={styles.container}>
-      <CardDetails data={selectedBeer} />
-      {/* {data.map(data => (
-        <CardDetails data={data} />
-      ))} */}
+    <div style={styles.container}>
+      {selectedBeer.map(data => (
+        <CardDetails key={data.id} data={data} />
+      ))}
     </div>
   );
 };

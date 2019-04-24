@@ -1,4 +1,5 @@
 import React from "react";
+import { StyleRoot } from "radium";
 import CardDetails from "../cardDetails/cardDetails";
 
 const BeerDetails = ({ data, match }) => {
@@ -21,7 +22,9 @@ const BeerDetails = ({ data, match }) => {
   return (
     <div style={styles.container}>
       {selectedBeer.map(data => (
-        <CardDetails key={data.id} data={data} />
+        <StyleRoot key={data.id}>
+          <CardDetails key={data.id} data={data} />
+        </StyleRoot>
       ))}
     </div>
   );

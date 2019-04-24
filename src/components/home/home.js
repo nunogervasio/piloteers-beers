@@ -1,4 +1,5 @@
 import React from "react";
+import { StyleRoot } from "radium";
 import CardMain from "../cardMain/cardMain";
 
 const Home = ({ data }) => {
@@ -12,7 +13,9 @@ const Home = ({ data }) => {
   return (
     <div style={styles.container}>
       {data.map(data => (
-        <CardMain key={data.id} data={data} />
+        <StyleRoot key={data.id}>
+          <CardMain key={data.id} data={data} />
+        </StyleRoot>
       ))}
     </div>
   );

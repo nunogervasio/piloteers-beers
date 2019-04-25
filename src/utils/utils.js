@@ -1,7 +1,7 @@
 import { format } from "date-fns";
 
 export function infoNotAvailable(value) {
-  return `No ${value} listed`;
+  return `${value} not listed`;
 }
 
 export function organicFormat(value) {

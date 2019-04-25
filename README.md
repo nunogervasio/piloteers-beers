@@ -4,8 +4,8 @@ This was my first time working with styled comonents so please forgive me if the
 
 Deployment Instructions:
 
-run `npm install`
+run => npm install
 
-run `npm run dev`
+run => npm run dev
 
-=> application should launch on localhost:3000
+application should launch on localhost:3000
